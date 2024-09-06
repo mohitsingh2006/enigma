@@ -193,9 +193,8 @@ const Page = () => {
                     </div>
 
                     <div  className="w-9/12 text-6xl indent-[210px]">
-                        <p ref={(el) => (textRefsHeading.current[2] = el)}>An independent web design and branding agency in Manchester set up in 2010 who care, build relationships, have industry experience, and win awards.
+                        <p ref={(el) => (textRefsHeading.current[2] = el)}>A creative web design and branding agency based in Lucknow, established in 2017, known for delivering innovative solutions, fostering strong client relationships, and earning recognition for excellence.
                         </p>    
-
                         
                         <Link ref={(el) => (textRefsHeading.current[3] = el)} href="/" className="bg-red-400 btn px-6 py-3 tracking-[0.5px] text-white rounded-[4px] hover:opacity-90 transition-all text-lg">Read More</Link>
                     </div>                    
@@ -289,12 +288,9 @@ const Page = () => {
                             <a href="#" className="w-10 h-10 arrow-link me-4 mt-3 bg-red-400 hover:opacity-90 rounded-[50%] inline-block p-3"><FaArrowLeftLong />
                             </a>
                         </div>
-
                     </div>
                 </div>                     
-            </div> 
-
-                    
+            </div>                     
         </section>
 
         <section className="section-5 py-[120px] bg-gray-900 bg-opacity-30">
