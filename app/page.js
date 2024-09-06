@@ -1,113 +1,330 @@
-import Image from "next/image";
+"use client"
+import { useEffect, useRef, useState } from "react"
+import { GrClose } from "react-icons/gr";
+import { GiHamburgerMenu } from "react-icons/gi";
+import { gsap } from "gsap";
+import { TextPlugin,ScrollTrigger } from "gsap/all";
+import Image from 'next/image'
+import Link from "next/link";
+import { FaArrowLeftLong  } from "react-icons/fa6";
 
-export default function Home() {
-  return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.js</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+gsap.registerPlugin(TextPlugin,ScrollTrigger);
 
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+const page = () => {
+    const [showMenu, setShowMenu] = useState()
+    const textRefs = useRef([]);
+    const textRefsHeading = useRef([]);
+    const textRefsWork = useRef([]);
+    const textRefsExpertise = useRef([]);
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
+    useEffect(function(){    
+        const marquee = document.querySelectorAll('.marquee')
+        if(!marquee) return
+        marquee.forEach(item => {
+            const marqueeInner = item.querySelector('.marquee__inner')
+            const marqueeContent = marqueeInner.querySelector('.marquee__content')
+            
+            // Duration
+            const duration = item.getAttribute('data-marquee-duration')
+            
+            // Element Clone
+            const marqueeContentClone = marqueeContent.cloneNode(true)
+            marqueeInner.append(marqueeContentClone)
+            
+            // Marquee animation
+            const marqueeContentAll = marqueeInner.querySelectorAll('.marquee__content')
+            marqueeContentAll.forEach(element => {
+                gsap.to(element, {
+                    x: "-101%",
+                    repeat: -1,
+                    duration: duration,
+                    ease: 'linear'
+                })
+            })
+        })
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
+        gsap.fromTo(
+            textRefs.current,
+            { y: 100, opacity: 0 },  // Start below and invisible
+            { y: 0, opacity: 1, duration: 1, ease: "power2.out", stagger: 0.2 } 
+        );
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  );
+        gsap.fromTo(
+            textRefsHeading.current,
+            { y: 100, opacity: 0 }, // Start below and invisible
+            {
+              y: 0, // Animate to original position
+              opacity: 1,
+              duration: 1, // Animation duration
+              ease: "power2.out", // Easing function
+              stagger: 0.2, // Delay between animations
+              scrollTrigger: {
+                trigger: textRefsHeading.current, // Element that triggers the animation
+                start: "top 80%", // When the element is 80% of the way down the viewport
+                end: "bottom 20%", // When the bottom reaches 20% of the viewport
+                toggleActions: "play", // Only play the animation once
+              },
+            }
+          );
+
+          gsap.fromTo(
+            textRefsWork.current,
+            { y: 100, opacity: 0 }, // Start below and invisible
+            {
+              y: 0, // Animate to original position
+              opacity: 1,
+              duration: 1, // Animation duration
+              ease: "power2.out", // Easing function
+              stagger: 0.2, // Delay between animations
+              scrollTrigger: {
+                trigger: textRefsWork.current, // Element that triggers the animation
+                start: "top 80%", // When the element is 80% of the way down the viewport
+                end: "bottom 20%", // When the bottom reaches 20% of the viewport
+                toggleActions: "play", // Only play the animation once
+              },
+            }
+          );
+
+          gsap.fromTo(
+            textRefsExpertise.current,
+            { y: 100, opacity: 0 }, // Start below and invisible
+            {
+              y: 0, // Animate to original position
+              opacity: 1,
+              duration: 1, // Animation duration
+              ease: "power2.out", // Easing function
+              stagger: 0.2, // Delay between animations
+              scrollTrigger: {
+                trigger: textRefsExpertise.current, // Element that triggers the animation
+                start: "top 80%", // When the element is 80% of the way down the viewport
+                end: "bottom 20%", // When the bottom reaches 20% of the viewport
+                toggleActions: "play none none none", // Only play the animation once
+              },
+            }
+          );
+
+
+        },[])
+
+
+
+    return (
+    <>
+        <header className="border-b border-slate-400 border-opacity-40">
+            <div className="flex  flex-row items-center mx-auto px-5  justify-between py-5 max-w-full  container">
+            <a href="/" className="text-white ">
+                <Image
+                src="/images/logo.png"
+                width={130}
+                height={0}
+                alt="logo"
+                />
+            </a>
+            <nav className="hidden sm:flex justify-between items-center gap-8 transition-all ">
+                <a href="#" className="text-white hover:text-red-400">Services</a>
+                <a href="#" className="text-white hover:text-red-400">Projects</a>
+                <a href="#" className="text-white hover:text-red-400">About Us</a>
+                <a href="#" className="text-white hover:text-red-400">Contact Us</a>
+            </nav>
+
+            <button href="#" className="bg-red-400 px-7 py-3 text-white rounded-[4px] hover:opacity-90 transition-all">Contact Now</button>
+            
+            <nav className="sm:hidden flex flex-col items-end gap-1 font-semibold">
+                <button
+                    onClick={() => setShowMenu(!showMenu)}
+                    className="sm:hidden font-bold text-xl hover:text-gray-500"
+                >
+                {showMenu ? <GrClose /> : <GiHamburgerMenu />}
+                </button>
+                { showMenu && (
+                <>
+                    <a href="#" className="hover:text-gray-500">
+                    Home
+                    </a>
+                    <a href="#" className="hover:text-gray-500">
+                    About
+                    </a>
+                    <a href="#" className="hover:text-gray-500">
+                    Contact
+                    </a>
+                </>
+                )}
+            </nav>
+            </div>
+            
+        </header>
+
+        <section className="section-1">
+            <div className="max-w-7xl mx-auto hero container relative px-5">
+                <div className="flex items-center min-h-[800px]" >
+                    <div className="mt-[-40px]">
+                        <h1 className="text-[7em] leading-none text-white" ref={(el) => (textRefs.current[0] = el)}>A web design and </h1>
+                        <h1 className="text-[7em] leading-none text-white" ref={(el) => (textRefs.current[1] = el)}>branding</h1>
+                        <h1 className="text-[7em] leading-none text-white" ref={(el) => (textRefs.current[2] = el)}>agency</h1>
+
+                        <div ref={(el) => (textRefs.current[3] = el)} className="mt-5 ">
+                            <Link  href="#" className="bg-red-400 px-6 py-3 tracking-[0.5px] text-white rounded-[4px] hover:opacity-90 transition-all text-lg">Book a free conultation</Link>
+                        </div>
+                    </div>                    
+                </div>  
+
+                {/* Animated Object */}
+                <div className=" absolute top-[12%] bottom-0 right-0">
+                   
+                </div>
+            </div>          
+        </section>
+
+
+        <section className="section-2 overflow-hidden mt-[-52px] bg-gradient-to-r from-red-500 to-transparent">
+           <div className="marquee text-7xl  text-white " data-marquee-duration="30">
+                <div className="marquee__inner flex gap-5 py-5">
+                    <div className="marquee__content">Data driven user focused value based. Data driven user focused value based. </div>
+                </div>
+            </div>                       
+        </section>
+
+        <section className="section-3 py-[120px] ">
+            <div className="container mx-auto text-white ">
+                <div className="flex">
+                    <div className="w-3/12">
+                        <h2 ref={(el) => (textRefsHeading.current[1] = el)}>1. Who are we?</h2>
+                    </div>
+
+                    <div  className="w-9/12 text-6xl indent-[210px]">
+                        <p ref={(el) => (textRefsHeading.current[2] = el)}>An independent web design and branding agency in Manchester set up in 2010 who care, build relationships, have industry experience, and win awards.
+                        </p>    
+
+                        
+                        <Link ref={(el) => (textRefsHeading.current[3] = el)} href="/" className="bg-red-400 btn px-6 py-3 tracking-[0.5px] text-white rounded-[4px] hover:opacity-90 transition-all text-lg">Read More</Link>
+                    </div>                    
+                </div>                   
+            </div>            
+        </section>
+
+        <section className="section-4 py-[120px] ">
+            <div className="container mx-auto text-white ">
+                <div className="flex">
+                    <div className="w-3/12">
+                        <h2 ref={(el) => (textRefsWork.current[0] = el)}>2. Our Work</h2>
+                    </div>
+
+                    <div className="w-9/12 text-6xl indent-[210px] text-right">
+                        <p ref={(el) => (textRefsWork.current[1] = el)}>Take a look at our projects</p>                            
+                    </div>                    
+                </div> 
+                <div className="grid gap-10 grid-cols-2 mt-20">
+                    <div className="card ">
+                        <Image
+                        ref={(el) => (textRefsWork.current[2] = el)}
+                        className="w-100 rounded-2xl"
+                        src="/images/construction-work.jpg"
+                        width={1200}
+                        height={0}
+                        style={{ width: '100%', height: 'auto' }} // optional
+                        alt="logo"
+                        />    
+
+                        <div className="flex justify-between py-3" ref={(el) => (textRefsWork.current[3] = el)}>
+                            <h3 className="text-2xl py-3" >MMA Factory</h3>  
+                            <a href="#" className="w-10 h-10 arrow-link me-4 mt-3 bg-red-400 hover:opacity-90 rounded-[50%] inline-block p-3"><FaArrowLeftLong />
+                            </a>
+                        </div>
+                    </div>
+
+                    <div className="card">
+
+                        <Image
+                            ref={(el) => (textRefsWork.current[4] = el)}
+                            className="w-100 rounded-2xl"
+                            src="/images/construction-work.jpg"
+                            width={1200}
+                            height={0}
+                            style={{ width: '100%', height: 'auto' }} // optional
+                            alt="logo"
+                            />
+
+                        <div className="flex justify-between py-3" ref={(el) => (textRefsWork.current[5] = el)}>
+                            <h3 className="text-2xl py-3">MMA Factory</h3>  
+                            <a href="#" className="w-10 h-10 arrow-link me-4 mt-3 bg-red-400 hover:opacity-90 rounded-[50%] inline-block p-3"><FaArrowLeftLong />
+                            </a>
+                        </div>
+
+                    </div>
+
+                    <div className="card">
+
+                        <Image
+                        ref={(el) => (textRefsWork.current[6] = el)}
+                            className="w-100 rounded-2xl"
+                            src="/images/construction-work.jpg"
+                            width={1200}
+                            height={0}
+                            style={{ width: '100%', height: 'auto' }} // optional
+                            alt="logo"
+                            />
+
+                        <div className="flex justify-between py-3" ref={(el) => (textRefsWork.current[7] = el)}>
+                            <h3 className="text-2xl py-3">MMA Factory</h3>  
+                            <a href="#" className="w-10 h-10 arrow-link me-4 mt-3 bg-red-400 hover:opacity-90 rounded-[50%] inline-block p-3"><FaArrowLeftLong />
+                            </a>
+                        </div>
+
+                    </div>
+
+                    <div className="card" ref={(el) => (textRefsWork.current[8] = el)}>
+
+                        <Image
+                            className="w-100 rounded-2xl"
+                            src="/images/construction-work.jpg"
+                            width={1200}
+                            height={0}
+                            style={{ width: '100%', height: 'auto' }} // optional
+                            alt="logo"
+                            />
+
+                        <div className="flex justify-between py-3" ref={(el) => (textRefsWork.current[9] = el)}>
+                            <h3 className="text-2xl py-3">MMA Factory</h3>  
+                            <a href="#" className="w-10 h-10 arrow-link me-4 mt-3 bg-red-400 hover:opacity-90 rounded-[50%] inline-block p-3"><FaArrowLeftLong />
+                            </a>
+                        </div>
+
+                    </div>
+                </div>                     
+            </div> 
+
+                    
+        </section>
+
+        <section className="section-5 py-[120px] bg-gray-900 bg-opacity-30">
+            <div className="container mx-auto text-white ">
+                <div className="flex">
+                    <div className="w-3/12">
+                        <h2 ref={(el) => (textRefsExpertise.current[0] = el)}>3. Our Expertise</h2>
+                    </div>
+
+                    <div className="w-9/12">
+                        <div className="text-6xl indent-[210px] text-right">
+                            <p ref={(el) => (textRefsExpertise.current[1] = el)}>How we take your business to the next level</p>                            
+                        </div>
+
+                        <div className="w-100 py-20">
+                           <h3 ref={(el) => (textRefsExpertise.current[2] = el)} className="text-8xl border-b border-gray-500 border-opacity-45 pb-8 mb-8">UI/UX</h3> 
+                           <h3 ref={(el) => (textRefsExpertise.current[3] = el)} className="text-8xl border-b border-gray-500 border-opacity-45 pb-8 mb-8">Web Development</h3> 
+                           <h3 ref={(el) => (textRefsExpertise.current[4] = el)} className="text-8xl border-b border-gray-500 border-opacity-45 pb-8 mb-8">SEO</h3> 
+                           <h3 ref={(el) => (textRefsExpertise.current[5] = el)} className="text-8xl border-b border-gray-500 border-opacity-45 pb-8 mb-8">CMS</h3> 
+                           <h3 ref={(el) => (textRefsExpertise.current[6] = el)} className="text-8xl border-b border-gray-500 border-opacity-45 pb-8 mb-8">ECommerce </h3> 
+                           <h3 ref={(el) => (textRefsExpertise.current[7] = el)} className="text-8xl border-b border-gray-500 border-opacity-45 pb-8 mb-8">Mobile Apps</h3> 
+                        </div>                        
+                    </div>                    
+                </div> 
+
+            </div>
+        </section>
+
+    </>
+  )
 }
+
+export default page

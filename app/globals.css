@@ -3,31 +3,65 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --primary-color: #090909;
+  --secondary-color: #000;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+html{
+  height: 100%;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+body{
+    background: var(--primary-color);
+    font-family: var(--font-roboto);
+    height: 100%;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+
+.container{
+  max-width: 1440px;
+}
+
+header{
+    nav{
+        a{
+          font-size: 1em;
+          font-weight: 400;
+          transition: all 0.4s ;
+        }
+    }
+}
+
+.section-1{
+  font-family: var(--font-bebas);
+}
+
+
+.marquee {
+  white-space: nowrap;
+  /* font-family: var(--font-bebas); */
+  font-weight: 300;
+}
+  
+button,.btn{
+  font-family: var(--font-bebas);
+  letter-spacing: 0.5px;
+}
+
+
+/* 
+.marquee__content {
+  color: #fff;
+  font-size: clamp(40px, 4.375vw, 70px);
+} */
+
+
+.section-4 {
+  .arrow-link{
+    transform: rotate(140deg);
+    transition: all 0.4s ease-in-out;
+    &:hover{
+      transform: rotate(500deg);
+    }
   }
 }
