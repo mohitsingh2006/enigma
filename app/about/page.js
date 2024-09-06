@@ -1,10 +1,10 @@
- "use client"
-import { useState } from "react"
+"use client"
 import { GrClose } from "react-icons/gr";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { useState } from "react";
 
 
-const page = () => {
+const Page = () => {
     const [showMenu, setShowMenu] = useState()
 
   return (
@@ -43,4 +43,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page

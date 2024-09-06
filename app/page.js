@@ -11,7 +11,7 @@ import { FaArrowLeftLong  } from "react-icons/fa6";
 
 gsap.registerPlugin(TextPlugin,ScrollTrigger);
 
-const page = () => {
+const Page = () => {
     const [showMenu, setShowMenu] = useState()
     const textRefs = useRef([]);
     const textRefsHeading = useRef([]);
@@ -327,4 +327,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page
