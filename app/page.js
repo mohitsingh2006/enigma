@@ -176,44 +176,42 @@ const Page = () => {
             </div>          
         </section>
 
-
         <section className="section-2 overflow-hidden mt-[-52px] bg-gradient-to-r from-red-500 to-transparent">
            <div className="marquee text-7xl  text-white " data-marquee-duration="30">
                 <div className="marquee__inner flex gap-5 py-5">
-                    <div className="marquee__content">Data driven user focused value based. Data driven user focused value based. </div>
+                    <div className="marquee__content">Data-powered, user-first, and always value-driven. Data-powered, user-first, and always value-driven.</div>
                 </div>
             </div>                       
         </section>
 
-        <section className="section-3 py-[120px] ">
+        <section className="section-3 py-[60px] ">
             <div className="container mx-auto text-white ">
-                <div className="flex">
-                    <div className="w-3/12">
+                <div className="flex-row">
+                    <div className="w-full py-5">
                         <h2 ref={(el) => (textRefsHeading.current[1] = el)}>1. Who are we?</h2>
                     </div>
 
-                    <div  className="w-9/12 text-6xl indent-[210px]">
+                    <div  className="w-full text-6xl mb-10">
                         <p ref={(el) => (textRefsHeading.current[2] = el)}>A creative web design and branding agency based in Lucknow, established in 2017, known for delivering innovative solutions, fostering strong client relationships, and earning recognition for excellence.
                         </p>    
-                        
-                        <Link ref={(el) => (textRefsHeading.current[3] = el)} href="/" className="bg-red-400 btn px-6 py-3 tracking-[0.5px] text-white rounded-[4px] hover:opacity-90 transition-all text-lg">Read More</Link>
-                    </div>                    
+                    </div>    
+                    <Link ref={(el) => (textRefsHeading.current[3] = el)} href="/" className="bg-red-400 btn px-6 py-3 tracking-[0.5px] text-white rounded-[4px] hover:opacity-90 transition-all text-lg">Read More</Link>                
                 </div>                   
             </div>            
         </section>
 
-        <section className="section-4 py-[120px] ">
+        <section className="section-4 py-[60px] ">
             <div className="container mx-auto text-white ">
-                <div className="flex">
-                    <div className="w-3/12">
+                <div className="flex-row">
+                    <div className="w-full py-5">
                         <h2 ref={(el) => (textRefsWork.current[0] = el)}>2. Our Work</h2>
                     </div>
 
-                    <div className="w-9/12 text-6xl indent-[210px] text-right">
+                    <div className="w-full text-6xl">
                         <p ref={(el) => (textRefsWork.current[1] = el)}>Take a look at our projects</p>                            
                     </div>                    
                 </div> 
-                <div className="grid gap-10 grid-cols-2 mt-20">
+                <div className="grid gap-10 grid-cols-2 py-8">
                     <div className="card ">
                         <Image
                         ref={(el) => (textRefsWork.current[2] = el)}
@@ -295,13 +293,13 @@ const Page = () => {
 
         <section className="section-5 py-[120px] bg-gray-900 bg-opacity-30">
             <div className="container mx-auto text-white ">
-                <div className="flex">
-                    <div className="w-3/12">
+                <div className="flex-row">
+                    <div className="w-full py-5">
                         <h2 ref={(el) => (textRefsExpertise.current[0] = el)}>3. Our Expertise</h2>
                     </div>
 
-                    <div className="w-9/12">
-                        <div className="text-6xl indent-[210px] text-right">
+                    <div className="w-full">
+                        <div className="text-6xl text-left">
                             <p ref={(el) => (textRefsExpertise.current[1] = el)}>How we take your business to the next level</p>                            
                         </div>
 
