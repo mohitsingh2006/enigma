@@ -65,3 +65,13 @@ button,.btn{
     }
   }
 }
+
+.section-5 {
+  .arrow-link{
+    transform: rotate(140deg);
+    transition: all 0.4s ease-in-out;
+    &:hover{
+      transform: rotate(500deg);
+    }
+  }
+}
