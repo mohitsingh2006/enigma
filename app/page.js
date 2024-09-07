@@ -440,7 +440,7 @@ Enigma Info Systems will help you with the right foot to start with right tools 
                 </div>
                 <hr className="opacity-10 my-10" />
                 <div className="text-center text-gray-300">
-                    &copy; Enigma Info Systems. All rights reserved
+                    {/* &copy; Enigma Info Systems. All rights reserved */}
                 </div>
             </div>
         </footer>
