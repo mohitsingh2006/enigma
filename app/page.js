@@ -335,10 +335,10 @@ const Page = () => {
                     <div className="flex  justify-center  min-h-80 items-center">
                         <div className="text-center">
                             <h3 className="text-5xl mb-4 text-white" ref={(el) => (textRefsFooter.current[0] = el)}>Tell us about your project</h3>
-                            <p className="text-lg mb-4" ref={(el) => (textRefsFooter.current[1] = el)}>Whether you're planning a large web or mobile app project or a small one.<br/>
+                            <p className="text-lg mb-4" ref={(el) => (textRefsFooter.current[1] = el)}>Whether you are planning a large web or mobile app project or a small one.<br/>
 Enigma Info Systems will help you with the right foot to start with right tools and technologies.
 </p>
-                            <button href="#" ref={(el) => (textRefsFooter.current[2] = el)} className="bg-red-400 px-7 py-2 mt-4 text-lg text-white rounded-[4px] hover:opacity-90 transition-all">Let's Discuss</button>
+                            <button href="#" ref={(el) => (textRefsFooter.current[2] = el)} className="bg-red-400 px-7 py-2 mt-4 text-lg text-white rounded-[4px] hover:opacity-90 transition-all">Let&apos;s Discuss</button>
                         </div>
                     </div>
                     <hr className="opacity-10" />
