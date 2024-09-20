@@ -34,6 +34,16 @@ header{
 
 .section-1{
   font-family: var(--font-bebas);
+
+  .rotate-text {
+
+    position: absolute;
+    transform-origin: 0 280px;
+    font-size: 4em;
+    line-height: 1;
+    top: 23px;
+    left: 298px;
+  }
 }
 
 
@@ -75,3 +85,4 @@ button,.btn{
     }
   }
 }
+
