@@ -224,7 +224,7 @@ const Page = () => {
 
                     <div className="card ">
                         <Image
-                        ref={(el) => (textRefsWork.current[2] = el)}
+                        ref={(el) => (textRefsWork.current[4] = el)}
                         className="w-100 rounded-2xl"
                         src="/images/portfolio23.png"
                         width={1200}
@@ -233,7 +233,7 @@ const Page = () => {
                         alt=""
                         />    
 
-                        <div className="flex justify-between py-3" ref={(el) => (textRefsWork.current[3] = el)}>
+                        <div className="flex justify-between py-3" ref={(el) => (textRefsWork.current[5] = el)}>
                             <h3 className="text-2xl py-3">Kreecooper</h3>  
                             <a href="#" target="_blank" className="w-10 h-10 arrow-link me-4 mt-3 bg-red-400 hover:opacity-90 rounded-[50%] inline-block p-3"><FaArrowLeftLong />
                             </a>
@@ -242,7 +242,7 @@ const Page = () => {
 
                     <div className="card ">
                         <Image
-                        ref={(el) => (textRefsWork.current[2] = el)}
+                        ref={(el) => (textRefsWork.current[6] = el)}
                         className="w-100 rounded-2xl"
                         src="/images/squAREOFF.png"
                         width={1200}
@@ -251,7 +251,7 @@ const Page = () => {
                         alt=""
                         />    
 
-                        <div className="flex justify-between py-3" ref={(el) => (textRefsWork.current[3] = el)}>
+                        <div className="flex justify-between py-3" ref={(el) => (textRefsWork.current[7] = el)}>
                             <h3 className="text-2xl py-3">Square Off</h3>  
                             <a href="https://squareoffnow.com/" target="_blank" className="w-10 h-10 arrow-link me-4 mt-3 bg-red-400 hover:opacity-90 rounded-[50%] inline-block p-3"><FaArrowLeftLong />
                             </a>
@@ -279,7 +279,7 @@ const Page = () => {
                     <div className="card">
 
                         <Image
-                            ref={(el) => (textRefsWork.current[4] = el)}
+                            ref={(el) => (textRefsWork.current[10] = el)}
                             className="w-100 rounded-2xl"
                             src="/images/portfolio2.jpg"
                             width={1200}
@@ -288,7 +288,7 @@ const Page = () => {
                             alt=""
                             />
 
-                        <div className="flex justify-between py-3" ref={(el) => (textRefsWork.current[5] = el)}>
+                        <div className="flex justify-between py-3" ref={(el) => (textRefsWork.current[11] = el)}>
                             <h3 className="text-2xl py-3">Superior Concrete Finishes</h3>  
                             <a href="#" className="w-10 h-10 arrow-link me-4 mt-3 bg-red-400 hover:opacity-90 rounded-[50%] inline-block p-3"><FaArrowLeftLong />
                             </a>
@@ -299,7 +299,7 @@ const Page = () => {
                     <div className="card">
 
                         <Image
-                        ref={(el) => (textRefsWork.current[6] = el)}
+                        ref={(el) => (textRefsWork.current[12] = el)}
                             className="w-100 rounded-2xl"
                             src="/images/portfolio3.jpg"
                             width={1200}
@@ -308,7 +308,7 @@ const Page = () => {
                             alt="logo"
                             />
 
-                        <div className="flex justify-between py-3" ref={(el) => (textRefsWork.current[7] = el)}>
+                        <div className="flex justify-between py-3" ref={(el) => (textRefsWork.current[13] = el)}>
                             <h3 className="text-2xl py-3">Inscyd</h3>  
                             <a href="https://inscyd.com" className="w-10 h-10 arrow-link me-4 mt-3 bg-red-400 hover:opacity-90 rounded-[50%] inline-block p-3"><FaArrowLeftLong />
                             </a>
