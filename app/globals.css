@@ -35,16 +35,43 @@ header{
 .section-1{
   font-family: var(--font-bebas);
 
-  .rotate-text {
-
-    position: absolute;
-    transform-origin: 0 280px;
-    font-size: 4em;
-    line-height: 1;
-    top: 23px;
-    left: 298px;
-  }
+  
 }
+
+@screen lg{
+    .rotate-text {
+        position: absolute;
+        transform-origin: 0 200px;
+        font-size: 3em;
+        line-height: 1;
+        top: 0px;
+        left: 198px;
+    }
+}
+
+@screen xl{
+    .rotate-text {
+        position: absolute;
+        transform-origin: 0 250px;
+        font-size: 3.5em;
+        line-height: 1;
+        top: 0px;
+        left: 251px;
+    }
+}
+
+@screen 2xl{
+    .rotate-text {
+        position: absolute;
+        transform-origin: 0 280px;
+        font-size: 4em;
+        line-height: 1;
+        top: 23px;
+        left: 298px;
+    }
+}
+
+
 
 
 .marquee {

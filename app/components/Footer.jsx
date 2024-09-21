@@ -32,12 +32,12 @@ const Footer = () => {
     },[])
 
   return (
-    <footer className="m-10 pb-0 bg-gray-900 bg-opacity-30">
+    <footer className="m-5 md:m-10 pb-0 bg-gray-900 bg-opacity-30">
         <div className=" container mx-auto p-10 rounded-md ">
             <div className=" text-gray-300 mb-20 ">
                 <div className="flex  justify-center  min-h-80 items-center">
                     <div className="text-center">
-                        <h3 className="text-5xl mb-4 text-white" ref={(el) => (textRefsFooter.current[0] = el)}>Tell us about your project</h3>
+                        <h3 className="text-3xl md:text-4xl lg:text-5xl  xl:text-5xl 2xl:text-5xl mb-4 text-white" ref={(el) => (textRefsFooter.current[0] = el)}>Tell us about your project</h3>
                         <p className="text-lg mb-4" ref={(el) => (textRefsFooter.current[1] = el)}>Whether you are planning a large web or mobile app project or a small one.<br/>
 Enigma Info Systems will help you with the right foot to start with right tools and technologies.
 </p>
@@ -48,8 +48,8 @@ Enigma Info Systems will help you with the right foot to start with right tools 
                 </div>
                 <hr className="opacity-10" />
             </div>
-            <div className="grid grid-cols-4">
-                <div className="logo ">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4">
+                <div className="logo mb-10">
                     <Image
                     src="/images/logo.png"
                     width={130}
@@ -73,7 +73,7 @@ Enigma Info Systems will help you with the right foot to start with right tools 
                         </div>
                     </div>   
                 </div>
-                <div>
+                <div className='mb-10'>
                     <h3 className="text-2xl text-red-400 mb-4 ">Services</h3>
                     <ul className="text-gray-300 leading-8 text-lg ">
                         <li>
