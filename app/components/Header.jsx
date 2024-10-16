@@ -19,10 +19,10 @@ const Header = () => {
                 /></a>
                 <div className='w-full py-4 px-4 text-white text-lg'>
                     <ul>
-                        <li className='border-b py-3 border-slate-400 border-opacity-20'><a href="#" className="hover:text-gray-500">Home</a></li>
-                        <li className='border-b py-3 border-slate-400 border-opacity-20'><a href="#" className="hover:text-gray-500">Services</a></li>
-                        <li className='border-b py-3 border-slate-400 border-opacity-20'><a href="#" className="hover:text-gray-500">About</a></li>
-                        <li className='border-b py-3 border-slate-400 border-opacity-20'><a href="#" className="hover:text-gray-500">Contact</a></li>
+                        <li className='border-b py-3 border-slate-400 border-opacity-20'><a href="#" className="hover:text-gray-500 uppercase">Home</a></li>
+                        <li className='border-b py-3 border-slate-400 border-opacity-20'><a href="#" className="hover:text-gray-500 uppercase">Services</a></li>
+                        <li className='border-b py-3 border-slate-400 border-opacity-20'><a href="#" className="hover:text-gray-500 uppercase">About</a></li>
+                        <li className='border-b py-3 border-slate-400 border-opacity-20'><a href="#" className="hover:text-gray-500 uppercase">Contact</a></li>
                     </ul>                                      
                 </div>
             </div>
@@ -39,7 +39,7 @@ const Header = () => {
                 alt="logo"
                 />
             </a>
-            <nav className="hidden sm:flex justify-between items-center gap-8 transition-all ">
+            <nav className="hidden uppercase sm:flex justify-between items-center gap-8 transition-all ">
                 <a href="#" className="text-white hover:text-red-400">Services</a>
                 <a href="#" className="text-white hover:text-red-400">Projects</a>
                 <a href="#" className="text-white hover:text-red-400">About Us</a>

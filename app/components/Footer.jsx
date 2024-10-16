@@ -32,7 +32,7 @@ const Footer = () => {
     },[])
 
   return (
-    <footer className="m-5 md:m-10 pb-0 bg-gray-900 bg-opacity-30">
+    <footer className="m-5 md:m-10 pb-0 ">
         <div className=" container mx-auto p-10 rounded-md ">
             <div className=" text-gray-300 mb-20 ">
                 <div className="flex  justify-center  min-h-80 items-center">
@@ -74,8 +74,8 @@ Enigma Info Systems will help you with the right foot to start with right tools 
                     </div>   
                 </div>
                 <div className='mb-10'>
-                    <h3 className="text-2xl text-red-400 mb-4 ">Services</h3>
-                    <ul className="text-gray-300 leading-8 text-lg ">
+                    <h3 className="text-2xl text-red-400 mb-4 uppercase">Services</h3>
+                    <ul className="text-gray-300 leading-8 text-lg uppercase">
                         <li>
                             <a href="#" className="hover:text-red-400 transition-all">Logo & Branding</a>
                         </li>
@@ -101,8 +101,8 @@ Enigma Info Systems will help you with the right foot to start with right tools 
                 </div>
 
                 <div>
-                    <h3 className="text-2xl text-red-400 mb-4">Explore</h3>
-                    <ul className="text-gray-300 leading-8 text-lg">
+                    <h3 className="text-2xl text-red-400 mb-4 uppercase">Explore</h3>
+                    <ul className="text-gray-300 leading-8 text-lg uppercase">
                         <li>
                             <a href="#" className="hover:text-red-400 transition-all">Home</a>
                         </li>
@@ -126,7 +126,7 @@ Enigma Info Systems will help you with the right foot to start with right tools 
                 </div>
 
                 <div>
-                    <h3 className="text-2xl text-red-400 mb-4">Follow Us</h3>
+                    <h3 className="text-2xl text-red-400 mb-4 uppercase">Follow Us</h3>
                     <div className="flex">
                         <a href="#" className="hover:bg-black mr-3 transition-all w-8 h-8 bg-red-400 text-white rounded flex justify-center items-center">
                             <FaInstagram />

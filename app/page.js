@@ -201,7 +201,8 @@ const Page = () => {
             </div>          
         </section>
 
-        <section className="section-2 overflow-hidden mt-[-52px] bg-gradient-to-r from-red-500 to-transparent">
+        <section className="section-2 overflow-hidden mt-[-52px] bg-red-500"> 
+        {/* bg-gradient-to-r from-red-500 to-transparent */}
            <div className="marquee 
             text-3xl
             md:text-4xl
@@ -226,11 +227,11 @@ const Page = () => {
             px-5">
             <div className="container mx-auto text-white ">
                 <div className="flex-row">
-                    <div className="w-full py-5">
-                        <h2 ref={(el) => (textRefsHeading.current[1] = el)}>1. Who are we?</h2>
+                    <div className="w-full py-5 section-heading">
+                        <h2 ref={(el) => (textRefsHeading.current[1] = el)}>Who are we?</h2>
                     </div>
 
-                    <div  className="w-full 
+                    <div className="w-full 
                     text-2xl
                     md:text-4xl
                     lg:text-5xl 
@@ -255,8 +256,8 @@ const Page = () => {
             px-5">
             <div className="container mx-auto text-white ">
                 <div className="flex-row">
-                    <div className="w-full py-5">
-                        <h2 ref={(el) => (textRefsWork.current[0] = el)}>2. Our Work</h2>
+                    <div className="w-full py-5 section-heading">
+                        <h2 ref={(el) => (textRefsWork.current[0] = el)}>Our Work</h2>
                     </div>
 
                     <div className="w-full 
@@ -441,8 +442,8 @@ const Page = () => {
         bg-gray-900 bg-opacity-30">
             <div className="container mx-auto text-white ">
                 <div className="flex-row">
-                    <div className="w-full py-5">
-                        <h2 ref={(el) => (textRefsExpertise.current[0] = el)}>3. Our Expertise</h2>
+                    <div className="w-full py-5 section-heading">
+                        <h2 ref={(el) => (textRefsExpertise.current[0] = el)}>Our Expertise</h2>
                     </div>
 
                     <div className="w-full relative">

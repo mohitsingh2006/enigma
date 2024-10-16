@@ -13,7 +13,7 @@ html{
 
 body{
     background: var(--primary-color);
-    font-family: var(--font-roboto);
+    font-family: var(--font-oxygen);
     height: 100%;
 }
 
@@ -33,9 +33,7 @@ header{
 }
 
 .section-1{
-  font-family: var(--font-bebas);
-
-  
+  font-family: var(--font-bebas);  
 }
 
 @screen lg{
@@ -113,3 +111,26 @@ button,.btn{
   }
 }
 
+.section-heading{
+  font-family: var(--font-bebas);
+  h2{
+    font-size: 2em;
+    letter-spacing: 0.05em;
+  }
+}
+
+footer {
+  border-top-left-radius: 24px;
+  border-top-right-radius: 24px;
+  background-image: linear-gradient(-290deg,#111827d9,#111827d9),url(/images/bg-footer.png);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#08103e",endColorstr="#264cce",GradientType=1);
+  color: #fff;
+  background-size: cover;
+  a{
+    font-family: var(--font-oxygen);
+  }
+}
+
+/* footer{
+  background-image: url('/images/bg-footer.png');
+} */
