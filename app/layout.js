@@ -1,3 +1,4 @@
+import Script from "next/script";
 import "./globals.css";
 import { Bebas_Neue, Roboto, Oxygen } from "next/font/google";
 
@@ -28,7 +29,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${bebas.variable} ${roboto.variable} ${oxygen.variable}`}>{children}</body>
+      <body className={`${bebas.variable} ${roboto.variable} ${oxygen.variable}`}>
+        {children}
+        <Script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer />
+      </body>
     </html>
   );
 }
