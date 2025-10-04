@@ -37,7 +37,7 @@ const ProjectCard = ({ title, category, description, image, technologies }) => (
     </div>
 );
 
-const page = () => {
+const ProjectPage = () => {
     const [activeCategory, setActiveCategory] = useState('All');
 
     const categories = ['All', 'Web Development', 'Mobile Apps', 'UI/UX Design', 'E-commerce'];
@@ -142,7 +142,7 @@ const page = () => {
                             Have a Project in Mind?
                         </h2>
                         <p className="text-rose-100 mb-8 max-w-2xl mx-auto">
-                            Let's discuss how we can help bring your vision to life with our expertise in design and development.
+                            Let&apos;s discuss how we can help bring your vision to life with our expertise in design and development.
                         </p>
                         <button 
                             onClick={() => window.location.href = '/contact'}
@@ -159,4 +159,4 @@ const page = () => {
     );
 };
 
-export default page;
+export default ProjectPage;

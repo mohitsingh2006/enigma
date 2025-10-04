@@ -3,11 +3,18 @@
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Link from "next/link";
+import Image from "next/image";
 
 const TeamCard = ({ name, role, image, bio }) => (
     <div className="bg-white/80 dark:bg-gray-900/70 rounded-lg shadow-md p-6 text-center">
         <div className="w-28 h-28 mx-auto mb-4 rounded-full overflow-hidden">
-            <img src={image} alt={`${name} photo`} className="w-full h-full object-cover" />
+            <Image 
+                width={112}
+                height={112}
+                src={image} 
+                alt={`${name} photo`} 
+                className="w-full h-full object-cover" 
+                />
         </div>
         <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100">{name}</h3>
         <p className="text-sm text-indigo-600 mb-2">{role}</p>
@@ -44,7 +51,7 @@ const Page = () => {
 
                         <div className="hidden md:block">
                             <div className="rounded-lg overflow-hidden shadow-lg">
-                                <img src="/images/portfolio3.jpg" alt="Team working" className="w-full h-72 object-cover" />
+                                <Image width={200} height={200} src="/images/portfolio3.jpg" alt="Team working" className="w-full h-72 object-cover" />
                             </div>
                         </div>
                     </div>
@@ -128,7 +135,7 @@ const Page = () => {
                     <div className="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
                         <div>
                             <h3 className="text-2xl font-bold">Ready to start your project?</h3>
-                            <p className="mt-2 text-indigo-100">Let's discuss your product and how we can help make it real.</p>
+                            <p className="mt-2 text-indigo-100">Let&apos;s discuss your product and how we can help make it real.</p>
                         </div>
 
                         <div className="flex gap-3">

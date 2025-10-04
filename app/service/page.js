@@ -123,7 +123,7 @@ const page = () => {
                             Ready to Transform Your Business?
                         </h2>
                         <p className="text-xl text-rose-100 mb-8 max-w-2xl mx-auto">
-                            Let's discuss how our services can help you achieve your business goals
+                            Let&apos;s discuss how our services can help you achieve your business goals
                         </p>
                         <Link href="/contact"
                             className="inline-block bg-white text-rose-500 font-medium py-3 px-5 rounded-md shadow hover:bg-gray-50 transition duration-300">

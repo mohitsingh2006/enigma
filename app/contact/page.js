@@ -6,7 +6,8 @@ import { useState } from 'react';
 import LocationCard from '../components/LocationCard';
 import { useForm } from 'react-hook-form';
 
-const page = () => {
+const ContactPage = () => {
+
     const {
         register,
         handleSubmit,
@@ -48,8 +49,8 @@ const page = () => {
                         <div>
                             <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-6">Contact us</h1>
                             <p className="text-lg text-gray-600 dark:text-gray-300 mb-8">
-                                Got a question or need more info? We're on standby to help.
-                                Just enter your details and we'll be with you shortly.
+                                Got a question or need more info? We&apos;re on standby to help.
+                                Just enter your details and we&apos;ll be with you shortly.
                             </p>
                             <p className="text-lg text-gray-600 dark:text-gray-300 mb-12">
                                 Or, give us a call on{' '}
@@ -210,4 +211,4 @@ const page = () => {
     );
 };
 
-export default page;
+export default ContactPage;
