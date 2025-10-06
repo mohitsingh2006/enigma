@@ -16,18 +16,15 @@ const ContactPage = () => {
     } = useForm();
 
      const [captchaToken, setCaptchaToken] = useState("");
-     // State to manage a visual error for the captcha
      const [captchaError, setCaptchaError] = useState("");
-     // State to manage the success message after API submission
      const [submissionSuccess, setSubmissionSuccess] = useState(false);
 
     const onSubmit = async (data) => {
-        setCaptchaError(""); // Clear previous errors
+        setCaptchaError(""); 
         setSubmissionSuccess(false);
 
         if (!captchaToken) {
             setCaptchaError("Please complete the captcha.");
-            // You can also add a focus or visual shake effect here
             return;
         }
 
@@ -214,8 +211,10 @@ const ContactPage = () => {
                                             className="cf-turnstile"
                                             data-sitekey={process.env.TURNSTILE_SITE_KEY}
                                             data-callback={(token) => {
+                                                console.log("Captcha token");
+                                                console.log(token);
                                                 setCaptchaToken(token);
-                                                setCaptchaError(""); // Clear error on successful token retrieval
+                                                setCaptchaError("");
                                             }}
                                             data-error-callback={() => setCaptchaToken("")} // Clear token on error
                                         ></div>
