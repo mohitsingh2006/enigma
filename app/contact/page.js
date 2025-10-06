@@ -34,11 +34,11 @@ const ContactPage = () => {
             body: JSON.stringify({...data, captchaToken}), // Pass token to API
         });
 
+        console.log("Response status:", res);
         if (res.ok) {
             // alert("Form submitted successfully!"); // Replaced with state for better UX
             setSubmissionSuccess(true);
             reset();
-            // Optional: Reload the captcha if you are using a reload function from Turnstile
             setCaptchaToken(""); 
         } else {
             alert("Failed to send email"); // Keep the alert for API failure
@@ -48,15 +48,13 @@ const ContactPage = () => {
 
 
     useEffect(() => {
-        // Expose callback functions to window so Turnstile can call them
         (window ).onCaptchaSuccess = (token) => {
-        console.log("Captcha token:", token);
-        setCaptchaToken(token);
-        setCaptchaError("");
+            setCaptchaToken(token);
+            setCaptchaError("");
         };
 
         (window).onCaptchaError = () => {
-        setCaptchaToken("");
+            setCaptchaToken("");
         };
     }, []);
 
@@ -227,13 +225,9 @@ const ContactPage = () => {
                                             data-callback="onCaptchaSuccess"
                                             data-error-callback="onCaptchaError"
                                         />
-                                            
-                                            
-
                                         {/* Captcha Error Display */}
                                         {captchaError && <p className="text-red-500 text-sm">{captchaError}</p>}
 
-                                        {/* The success icon and logo from the screenshot was likely here. It's removed to prevent confusion. */}
                                         
                                         {/* Submit */}
                                         <button
