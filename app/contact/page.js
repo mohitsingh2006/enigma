@@ -46,6 +46,20 @@ const ContactPage = () => {
         }
     };
 
+
+    useEffect(() => {
+        // Expose callback functions to window so Turnstile can call them
+        (window ).onCaptchaSuccess = (token) => {
+        console.log("Captcha token:", token);
+        setCaptchaToken(token);
+        setCaptchaError("");
+        };
+
+        (window).onCaptchaError = () => {
+        setCaptchaToken("");
+        };
+    }, []);
+
     return (
         <>
             <Header />
@@ -209,15 +223,12 @@ const ContactPage = () => {
                                         {/* Cloudflare Turnstile */}
                                         <div
                                             className="cf-turnstile"
-                                            data-sitekey={process.env.TURNSTILE_SITE_KEY}
-                                            data-callback={(token) => {
-                                                console.log("Captcha token");
-                                                console.log(token);
-                                                setCaptchaToken(token);
-                                                setCaptchaError("");
-                                            }}
-                                            data-error-callback={() => setCaptchaToken("")} // Clear token on error
-                                        ></div>
+                                            data-sitekey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY}
+                                            data-callback="onCaptchaSuccess"
+                                            data-error-callback="onCaptchaError"
+                                        />
+                                            
+                                            
 
                                         {/* Captcha Error Display */}
                                         {captchaError && <p className="text-red-500 text-sm">{captchaError}</p>}
