@@ -1,6 +1,7 @@
 import Script from "next/script";
 import "./globals.css";
 import { Bebas_Neue, Roboto, Oxygen } from "next/font/google";
+import HotToast from "./components/HotToast";
 
 const roboto = Roboto({
   subsets: ['latin'],
@@ -32,6 +33,7 @@ export default function RootLayout({ children }) {
       <body className={`${bebas.variable} ${roboto.variable} ${oxygen.variable}`}>
         {children}
         
+        <HotToast />
         <Script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer />
       </body>
     </html>
