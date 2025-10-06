@@ -92,70 +92,70 @@ const ProjectPage = () => {
         : projects.filter(project => project.category === activeCategory);
 
     return (
-        <div className="min-h-screen flex flex-col bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800">
+        <>
             <Header />
-
-            <main className="flex-1 py-16">
-                {/* Hero Section */}
-                <section className="container mx-auto px-6 mb-16 text-center">
-                    <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white mb-6">
-                        Our Latest Projects
-                    </h1>
-                    <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-                        Explore our portfolio of successful projects delivered with passion, 
-                        innovation, and technical excellence.
-                    </p>
-                </section>
-
-                {/* Category Filter */}
-                <section className="container mx-auto px-6 mb-12">
-                    <div className="flex flex-wrap justify-center gap-4">
-                        {categories.map((category) => (
-                            <button
-                                key={category}
-                                onClick={() => setActiveCategory(category)}
-                                className={`px-4 py-2 rounded-full transition-colors duration-200 ${
-                                    activeCategory === category
-                                        ? 'bg-rose-500 text-white'
-                                        : 'bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-rose-100 dark:hover:bg-rose-900/30'
-                                }`}
-                            >
-                                {category}
-                            </button>
-                        ))}
-                    </div>
-                </section>
-
-                {/* Projects Grid */}
-                <section className="container mx-auto px-6">
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {filteredProjects.map((project, index) => (
-                            <ProjectCard key={index} {...project} />
-                        ))}
-                    </div>
-                </section>
-
-                {/* CTA Section */}
-                <section className="container mx-auto px-6 mt-20">
-                    <div className="bg-gradient-to-r from-rose-500 to-rose-600 dark:from-rose-600 dark:to-rose-700 rounded-2xl p-12 text-center">
-                        <h2 className="text-3xl font-bold text-white mb-6">
-                            Have a Project in Mind?
-                        </h2>
-                        <p className="text-rose-100 mb-8 max-w-2xl mx-auto">
-                            Let&apos;s discuss how we can help bring your vision to life with our expertise in design and development.
+            <main className="min-h-screen flex flex-col bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800">
+                <div className="flex-1 py-16">
+                    {/* Hero Section */}
+                    <section className="container mx-auto px-6 mb-16 text-center">
+                        <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white mb-6">
+                            Our Latest Projects
+                        </h1>
+                        <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+                            Explore our portfolio of successful projects delivered with passion, 
+                            innovation, and technical excellence.
                         </p>
-                        <button 
-                            onClick={() => window.location.href = '/contact'}
-                            className="bg-white text-rose-500 hover:bg-rose-50 px-8 py-3 rounded-lg font-medium transition-colors duration-200"
-                        >
-                            Start a Project
-                        </button>
-                    </div>
-                </section>
-            </main>
+                    </section>
 
+                    {/* Category Filter */}
+                    <section className="container mx-auto px-6 mb-12">
+                        <div className="flex flex-wrap justify-center gap-4">
+                            {categories.map((category) => (
+                                <button
+                                    key={category}
+                                    onClick={() => setActiveCategory(category)}
+                                    className={`px-4 py-2 rounded-full transition-colors duration-200 ${
+                                        activeCategory === category
+                                            ? 'bg-rose-500 text-white'
+                                            : 'bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-rose-100 dark:hover:bg-rose-900/30'
+                                    }`}
+                                >
+                                    {category}
+                                </button>
+                            ))}
+                        </div>
+                    </section>
+
+                    {/* Projects Grid */}
+                    <section className="container mx-auto px-6">
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                            {filteredProjects.map((project, index) => (
+                                <ProjectCard key={index} {...project} />
+                            ))}
+                        </div>
+                    </section>
+
+                    {/* CTA Section */}
+                    <section className="container mx-auto px-6 mt-20">
+                        <div className="bg-gradient-to-r from-rose-500 to-rose-600 dark:from-rose-600 dark:to-rose-700 rounded-2xl p-12 text-center">
+                            <h2 className="text-3xl font-bold text-white mb-6">
+                                Have a Project in Mind?
+                            </h2>
+                            <p className="text-rose-100 mb-8 max-w-2xl mx-auto">
+                                Let&apos;s discuss how we can help bring your vision to life with our expertise in design and development.
+                            </p>
+                            <button 
+                                onClick={() => window.location.href = '/contact'}
+                                className="bg-white text-rose-500 hover:bg-rose-50 px-8 py-3 rounded-lg font-medium transition-colors duration-200"
+                            >
+                                Start a Project
+                            </button>
+                        </div>
+                    </section>
+                </div>               
+            </main>
             <Footer />
-        </div>
+        </>
     );
 };
 
