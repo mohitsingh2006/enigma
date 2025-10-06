@@ -7,6 +7,15 @@ module.exports = {
   ],
   theme: {
     extend: {
+      animation: {
+        'border-blink': 'border-blink 1.5s infinite', // Apply animation: name, duration, repetition
+      },
+      keyframes: {
+        'border-blink': {
+          '0%, 100%': { 'border-color': 'transparent' },
+          '50%': { 'border-color': 'rgb(239 68 68 / 1)' }, 
+        },
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":

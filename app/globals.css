@@ -112,6 +112,15 @@ button,.btn{
   }
 }
 
+@keyframes border-blink {
+  0%, 100% {
+    border-color: white;
+  }
+  50% {
+    border-color: theme('colors.red.400');
+  }
+}
+
 footer {
   border-top-left-radius: 24px;
   border-top-right-radius: 24px;

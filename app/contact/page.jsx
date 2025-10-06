@@ -81,8 +81,12 @@ const ContactPage = () => {
                                 </p>
                                 <p className="text-lg text-gray-600 dark:text-gray-300 mb-12">
                                     Or, give us a call on{' '}
-                                    <a href="tel:1800123456" className="text-rose-500 hover:text-rose-600 dark:text-rose-400">
-                                        1800 123 456
+                                    <a
+                                        href="tel:+919519262619" 
+                                        title='+91 9519262619' 
+                                        className="text-rose-500 hover:text-rose-600 dark:text-rose-400"
+                                    >
+                                    +91 9519262619
                                     </a>
                                 </p>
 
@@ -90,20 +94,10 @@ const ContactPage = () => {
                                     <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Locations</h2>
                                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 auto-rows-fr">
                                         <LocationCard
-                                            city="Mumbai AA"
-                                            address="Level 32, World Trade Centre"
-                                            details="Mumbai, Maharashtra 400001"
-                                        />
-                                        <LocationCard
-                                            city="Bangalore"
-                                            address="WeWork, Embassy Tech Village"
-                                            details="Bangalore, Karnataka 560103"
-                                        />
-                                        <LocationCard
-                                            city="Delhi"
-                                            address="Cyber City, DLF Phase 2"
-                                            details="Gurugram, Haryana 122002"
-                                        />
+                                            city="Lucknow"
+                                            address="417/245 Niwajganj, Thakurganj Chowk"
+                                            details="Lucknow, Uttar Pradesh 226003"
+                                        />                                        
                                     </div>
 
                                 </div>
