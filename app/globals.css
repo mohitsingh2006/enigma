@@ -84,13 +84,6 @@ button,.btn{
 }
 
 
-/* 
-.marquee__content {
-  color: #fff;
-  font-size: clamp(40px, 4.375vw, 70px);
-} */
-
-
 .section-4 {
   .arrow-link{
     transform: rotate(140deg);
@@ -130,7 +123,3 @@ footer {
     font-family: var(--font-oxygen);
   }
 }
-
-/* footer{
-  background-image: url('/images/bg-footer.png');
-} */

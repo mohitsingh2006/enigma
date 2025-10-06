@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { GrClose } from "react-icons/gr";
 import { GiHamburgerMenu } from "react-icons/gi";
 import Image from 'next/image'
+import Link from 'next/link';
 
 const Header = () => {
     const [showMenu, setShowMenu] = useState()
@@ -19,10 +20,18 @@ const Header = () => {
                 /></a>
                 <div className='w-full py-4 px-4 text-white text-lg'>
                     <ul>
-                        <li className='border-b py-3 border-slate-400 border-opacity-20'><a href="#" className="hover:text-gray-500 uppercase">Home</a></li>
-                        <li className='border-b py-3 border-slate-400 border-opacity-20'><a href="#" className="hover:text-gray-500 uppercase">Services</a></li>
-                        <li className='border-b py-3 border-slate-400 border-opacity-20'><a href="#" className="hover:text-gray-500 uppercase">About</a></li>
-                        <li className='border-b py-3 border-slate-400 border-opacity-20'><a href="#" className="hover:text-gray-500 uppercase">Contact</a></li>
+                        <li className='border-b py-3 border-slate-400 border-opacity-20'>
+                            <Link href="/" title='Home' className="hover:text-gray-500 uppercase">Home</Link>
+                        </li>
+                        <li className='border-b py-3 border-slate-400 border-opacity-20'>
+                            <Link href="/service" title='Services' className="hover:text-gray-500 uppercase">Services</Link>
+                        </li>
+                        <li className='border-b py-3 border-slate-400 border-opacity-20'>
+                            <Link href="about" title='About' className="hover:text-gray-500 uppercase">About</Link>
+                        </li>
+                        <li className='border-b py-3 border-slate-400 border-opacity-20'>
+                            <Link href="/contact" title='Contact' className="hover:text-gray-500 uppercase">Contact</Link>
+                        </li>
                     </ul>                                      
                 </div>
             </div>
@@ -40,10 +49,10 @@ const Header = () => {
                 />
             </a>
             <nav className="hidden uppercase sm:flex justify-between items-center gap-8 transition-all ">
-                <a href="/service" className="text-white hover:text-red-400">Services</a>
-                <a href="/project" className="text-white hover:text-red-400">Projects</a>
-                <a href="/about" className="text-white hover:text-red-400">About Us</a>
-                <a href="/contact" className="text-white hover:text-red-400">Contact Us</a>
+                <Link href="/service" title='Services' className="text-white hover:text-red-400">Services</Link>
+                <Link href="/project" title='Projects' className="text-white hover:text-red-400">Projects</Link>
+                <Link href="/about" title='About Us'   className="text-white hover:text-red-400">About Us</Link>
+                <Link href="/contact" title='Contact Us' className="text-white hover:text-red-400">Contact Us</Link>
             </nav>
 
         <button href="#" className="bg-red-400 hidden md:block px-7 py-3 text-white rounded-[4px] hover:opacity-90 transition-all">Contact Now</button>

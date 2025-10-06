@@ -31,6 +31,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={`${bebas.variable} ${roboto.variable} ${oxygen.variable}`}>
         {children}
+        
         <Script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer />
       </body>
     </html>
