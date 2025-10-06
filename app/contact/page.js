@@ -2,7 +2,7 @@
 
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import LocationCard from '../components/LocationCard';
 import { useForm } from 'react-hook-form';
 
