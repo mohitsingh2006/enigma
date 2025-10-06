@@ -76,7 +76,7 @@ const ContactPage = () => {
                                     <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Locations</h2>
                                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 auto-rows-fr">
                                         <LocationCard
-                                            city="Mumbai"
+                                            city="Mumbai AA"
                                             address="Level 32, World Trade Centre"
                                             details="Mumbai, Maharashtra 400001"
                                         />
