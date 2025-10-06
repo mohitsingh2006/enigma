@@ -12,7 +12,7 @@ const ContactPage = () => {
     const {
         register,
         handleSubmit,
-        formState: { errors },
+        formState: { errors,isSubmitting },
         reset,
     } = useForm();
 
@@ -228,7 +228,9 @@ const ContactPage = () => {
                                     {/* Submit */}
                                     <button
                                         type="submit"
-                                        className="bg-red-400 hidden md:block px-7 py-3 text-white rounded-[4px] hover:opacity-90 transition-all w-full"
+                                        className={`w-full p-2 rounded text-white ${
+                                            isSubmitting ? "bg-gray-400 cursor-not-allowed transition-all w-full" : "bg-red-400 hidden md:block px-7 py-3 text-white rounded-[4px] hover:opacity-90 transition-all w-full"
+                                        }`}
                                     >
                                         Submit
                                     </button>
