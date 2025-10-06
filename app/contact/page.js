@@ -100,7 +100,7 @@ const ContactPage = () => {
                                 {submissionSuccess ? (
                                     <div className="text-center py-10">
                                         <p className="text-2xl font-bold text-green-500">✅ Form submitted successfully!</p>
-                                        <p className="text-gray-600 dark:text-gray-300 mt-4">We'll be in touch shortly.</p>
+                                        <p className="text-gray-600 dark:text-gray-300 mt-4">We&apos; ll be in touch shortly.</p>
                                     </div>
                                 ) : (
                                     <form onSubmit={handleSubmit(onSubmit)} className="space-y-4" method='POST'>
