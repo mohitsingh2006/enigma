@@ -223,7 +223,7 @@ const ContactPage = () => {
                                         {/* Cloudflare Turnstile */}
                                         <div
                                             className="cf-turnstile"
-                                            data-sitekey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY}
+                                            data-sitekey={process.env.TURNSTILE_SITE_KEY}
                                             data-callback="onCaptchaSuccess"
                                             data-error-callback="onCaptchaError"
                                         />
